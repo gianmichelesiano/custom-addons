@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     <menuitem name="Google My Business" 
+               id="google_mybusiness_root" 
+               sequence="10"/>
+     
+     <menuitem name="Post" 
+               id="menu_google_mybusiness" 
+               parent="google_mybusiness_root"
+               sequence="10"/>  
+</odoo>

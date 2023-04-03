@@ -1,0 +1,67 @@
+<odoo>
+    <record id="view_ayrshare_form" model="ir.ui.view">
+        <field name="name">ayrshare.post.form</field>
+        <field name="model">ayrshare.post</field>
+        <field name="arch" type="xml">
+            <form>
+              <sheet>
+                <group>
+                    <group>
+                      <field name="title"/>
+                      <field name="image"/>   
+                    </group>
+                    <group>
+                      <field name="description"/>   
+                      <field name="platform"/> 
+                    </group>    
+                    <group>
+                      <button name= "action_test_button"  confirm="prendila nel culo nonno?" string= "Object button" type="object" class="btn-secondary"/>
+                    </group>   
+                </group>
+              </sheet>            
+            </form>
+        </field>
+    </record>
+
+
+    <record id="view_ayrshare_tree" model="ir.ui.view">
+        <field name="name">ayrshare.post.tree</field>
+        <field name="model">ayrshare.post</field>
+        <field name="arch" type="xml">
+            <tree>
+                  <field name="title"/>
+                  <field name="image"/>   
+                  <field name="description"/>   
+                  <field name="platform"/>  
+                   
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_ayrshare_search" model="ir.ui.view">
+        <field name="name">ayrshare.post.search</field>
+        <field name="model">ayrshare.post</field>
+        <field name="arch" type="xml">
+            <search>
+                  <field name="title"/>  
+                  <field name="description"/>   
+                  <field name="platform"/>  
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_ayrshare_test">
+      <field name="name">Ayrshare</field>
+      <field name="res_model">ayrshare.post</field>
+      <field name="view_mode">tree,form</field>
+      <field name="type">ir.actions.act_window</field>
+    </record>
+
+    <menuitem name="test" 
+          id="menu_ayrshare_test" 
+          parent="menu_ayrshare_post"
+          action="action_ayrshare_test"
+          sequence="10"/>  
+
+     
+</odoo>

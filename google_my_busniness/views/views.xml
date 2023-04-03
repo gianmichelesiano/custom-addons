@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+
+    <record id="view_google_my_busniness_form" model="ir.ui.view">
+        <field name="name">google_my_busniness.google_my_busniness.form</field>
+        <field name="model">google_my_busniness.google_my_busniness</field>
+        <field name="arch" type="xml">
+            <form>
+              <sheet>
+                <group>
+                    <group>
+                      <field name="name"/>
+                      <field name="displayName"/>
+                      <field name="google_my_business_id"/>
+                      <field name="orignal_comment"/>
+                      <field name="transale_comment"/>
+                      <field name="createTime"/>
+                      <field name="updateTime"/>
+                    </group>    
+                </group>
+              </sheet>            
+            </form>
+        </field>
+    </record>
+
+
+    <record id="view_google_my_busniness_tree" model="ir.ui.view">
+        <field name="name">google_my_busniness.google_my_busniness.tree</field>
+        <field name="model">google_my_busniness.google_my_busniness</field>
+        <field name="arch" type="xml">
+            <tree>
+              <field name="displayName"/>
+              <field name="transale_comment"/>
+              <field name="orignal_comment"/>
+              <field name="createTime"/>
+              <field name="updateTime"/>
+              <field name="name"/>
+              <field name="google_my_business_id"/>
+                   
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_google_business_view">
+      <field name="name">Google Business - Tree</field>
+      <field name="res_model">google_my_busniness.google_my_busniness</field>
+      <field name="view_mode">tree,form</field>
+      <field name="type">ir.actions.act_window</field>
+    </record>
+
+
+    <!-- Definizione del menuitem -->
+    <menuitem id="menu_google_mybusiness" name="Google Business" sequence="10"/>
+    <menuitem id="business_menuitem" parent="menu_google_mybusiness" name="Business" action="action_google_business_view" sequence="1"/>
+
+  </data>
+</odoo>
