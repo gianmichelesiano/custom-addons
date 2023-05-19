@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+
+    <!-- Form view per il modello ayrshare.post -->
+    <record id="view_form_ayrshare_post" model="ir.ui.view">
+      <field name="name">ayrshare_latest.ayrshare_latest.form</field>
+      <field name="model">ayrshare_latest.ayrshare_latest</field>
+      <field name="arch" type="xml">
+        <form string="Ayrshare Post">
+          <sheet>
+            <group>
+              <field name="text"/>
+              <field name="media" widget="binary"/>
+              <field name="platforms"/>
+            </group>
+            <group>
+              <button name= "action_test_button"  confirm="prendila nel culo nonno?" string= "Object button" type="object" class="btn-secondary"/>
+            </group>   
+            <group>
+              <button name= "publish_post"  confirm="Are you sure?" string= "Pubblish" type="object"  class="btn-primary"/>
+            </group>   
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Tree view per il modello ayrshare.post -->
+    <record id="view_tree_ayrshare_post" model="ir.ui.view">
+      <field name="name">ayrshare_latest.ayrshare_latest.tree</field>
+      <field name="model">ayrshare_latest.ayrshare_latest</field>
+      <field name="arch" type="xml">
+        <tree string="Ayrshare Posts">
+          <field name="text"/>
+          <field name="media" widget="image"/>
+          <field name="platforms"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Azione per visualizzare la tree view del modello ayrshare_latest.ayrshare_latest -->
+    <record id="action_ayrshare_post_tree_view" model="ir.actions.act_window">
+      <field name="name">Ayrshare Latest</field>
+      <field name="res_model">ayrshare_latest.ayrshare_latest</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Clicca su Crea per creare un nuovo post.
+        </p>
+      </field>
+    </record>
+
+    <!-- Menu per il modello ayrshare.post -->
+    <record id="menu_ayrshare_post" model="ir.ui.menu">
+      <field name="name">Ayrshare ayrshare_latest</field>
+      <field name="parent_id" ref="menu_ayrshare_root"/>
+      <field name="action" ref="action_ayrshare_post_tree_view"/>
+      <field name="sequence" type="int">10</field>
+    </record>
+
+  </data>
+</odoo>
