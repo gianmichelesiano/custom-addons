@@ -4,6 +4,9 @@
                id="menu_ayrshare_root" 
                sequence="10"/>
      
-
+     <menuitem name="Post Service" 
+               id="menu_ayrshare_post" 
+               parent="menu_ayrshare_root"
+               sequence="10"/>  
 </odoo>
 

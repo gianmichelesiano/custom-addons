@@ -51,12 +51,19 @@
     </record>
 
     <!-- Menu per il modello ayrshare.post -->
-    <record id="menu_ayrshare_post" model="ir.ui.menu">
-      <field name="name">Ayrshare ayrshare_latest</field>
-      <field name="parent_id" ref="menu_ayrshare_root"/>
+    <record id="menu_ayrshare_post_action" model="ir.ui.menu">
+      <field name="name">Ayrshare</field>
       <field name="action" ref="action_ayrshare_post_tree_view"/>
       <field name="sequence" type="int">10</field>
     </record>
 
+     <menuitem name="Ayrshare Service" 
+               id="menu_ayrshare_root" 
+               sequence="10"/>
+     
+     <menuitem name="Post Service" 
+               id="menu_ayrshare_post" 
+               parent="menu_ayrshare_root"
+               sequence="10"/>  
   </data>
 </odoo>

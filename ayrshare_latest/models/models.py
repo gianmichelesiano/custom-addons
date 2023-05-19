@@ -9,7 +9,7 @@ class ayrshare_latest(models.Model):
     text = fields.Char(string='Post Text')
     media = fields.Binary(string='Post Media')
     platforms = fields.Selection([('facebook', 'Facebook'), ('twitter', 'Twitter')], string='Post Platforms')
-    published = fields.Boolean(string='Published')
+
     
 
     def action_test_button(self):
