@@ -32,7 +32,7 @@ Requirements:
 
 Cost: ~€0.02 per description (paid directly to OpenAI)
     """,
-    'author': 'Gianmichele Bandinelli',
+    'author': 'Gianmichele Siano',
     'website': 'https://github.com/bandigare',
     'license': 'LGPL-3',
     'price': 29.00,
