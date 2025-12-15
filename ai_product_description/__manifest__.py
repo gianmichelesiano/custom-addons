@@ -32,7 +32,7 @@ Requirements:
 
 Cost: ~€0.02 per description (paid directly to OpenAI)
     """,
-    'author': 'Gianmichele Siano',
+    'author': 'Speats',
     'website': 'https://speats.ch/',
     'license': 'LGPL-3',
     'price': 29.00,

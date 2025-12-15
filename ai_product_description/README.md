@@ -50,4 +50,4 @@ LGPL-3
 
 ## Author
 
-Gianmichele Siano
+Speats
