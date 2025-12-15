@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Add "Generate with AI" smart button to product form -->
+    <record id="product_template_form_view_inherit" model="ir.ui.view">
+        <field name="name">product.template.form.inherit.ai.description</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+
+            <!-- Add smart button in button_box -->
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_generate_ai_description"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-magic"
+                        help="Generate product description using AI">
+                    <div class="o_stat_info">
+                        <span class="o_stat_text">Generate AI</span>
+                        <span class="o_stat_text">Description</span>
+                    </div>
+                </button>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- Add button above description_sale field in Sales tab -->
+    <record id="product_template_form_view_sale_inherit" model="ir.ui.view">
+        <field name="name">product.template.form.sale.inherit.ai.description</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="sale.product_template_form_view"/>
+        <field name="arch" type="xml">
+
+            <!-- Add button above the description_sale field -->
+            <xpath expr="//field[@name='description_sale']" position="before">
+                <div class="row mt-2 mb-2">
+                    <div class="col-12">
+                        <button name="action_generate_ai_description"
+                                string="Generate with AI"
+                                type="object"
+                                class="btn-sm btn-primary"
+                                icon="fa-magic"
+                                help="Generate product description using AI"/>
+                        <span class="text-muted ml-2">
+                            <i class="fa fa-info-circle"/>
+                            Generate a professional description using AI (~3 seconds, ~€0.02 cost)
+                        </span>
+                    </div>
+                </div>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

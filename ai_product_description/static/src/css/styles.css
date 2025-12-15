@@ -1,0 +1,23 @@
+/* AI Product Description Generator Styles */
+
+.ai_generate_button {
+    margin: 5px 0;
+}
+
+.ai_description_wizard .o_form_sheet {
+    max-width: 900px;
+}
+
+.ai_template_selection {
+    margin: 10px 0;
+}
+
+.ai_preview_container {
+    min-height: 200px;
+    margin: 15px 0;
+}
+
+.ai_loading_spinner {
+    text-align: center;
+    padding: 40px;
+}

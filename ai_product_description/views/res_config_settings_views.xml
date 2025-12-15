@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.ai.product.description</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="AI Product Description" string="AI Product Description" name="ai_product_description">
+                    <block title="OpenAI Configuration" name="openai_configuration">
+                        <setting help="Configure your OpenAI API key to enable AI-powered product description generation">
+                            <field name="openai_api_key" password="True" placeholder="sk-..."/>
+                            <div class="text-muted">
+                                Get your API key at: <a href="https://platform.openai.com/api-keys" target="_blank">platform.openai.com/api-keys</a>
+                            </div>
+                            <div class="mt-2">
+                                <button name="action_test_openai_connection"
+                                        type="object"
+                                        string="Test Connection"
+                                        class="btn-primary"
+                                        invisible="not openai_api_key"/>
+                            </div>
+                        </setting>
+
+                        <setting string="AI Model" help="Select which OpenAI model to use for generation">
+                            <field name="openai_model"/>
+                            <div class="text-muted">
+                                <strong>Recommended:</strong> GPT-4o Mini offers the best balance of speed, quality, and cost (~$0.02 per description)
+                            </div>
+                        </setting>
+
+                        <setting string="Advanced Settings">
+                            <div class="row">
+                                <label for="openai_temperature" class="col-lg-3 o_light_label"/>
+                                <field name="openai_temperature" class="col-lg-2"/>
+                            </div>
+                            <div class="row mt-2">
+                                <label for="openai_max_tokens" class="col-lg-3 o_light_label"/>
+                                <field name="openai_max_tokens" class="col-lg-2"/>
+                            </div>
+                            <div class="text-muted mt-2">
+                                <strong>Tip:</strong> Higher temperature = more creative but less predictable descriptions
+                            </div>
+                        </setting>
+                    </block>
+
+                    <block title="Information" name="information">
+                        <div class="alert alert-info" role="alert">
+                            <h5>How to Use:</h5>
+                            <ol>
+                                <li>Get an API key from <a href="https://platform.openai.com" target="_blank">OpenAI</a> (free account available)</li>
+                                <li>Enter your API key above and test the connection</li>
+                                <li>Go to any product and click "Generate with AI"</li>
+                                <li>Choose a template and generate your description</li>
+                            </ol>
+                            <h5 class="mt-3">Cost Estimate:</h5>
+                            <ul>
+                                <li>Typical cost: ~€0.02 per product description</li>
+                                <li>100 products ≈ €2 in API costs</li>
+                                <li>Costs are paid directly to OpenAI, not through this module</li>
+                            </ul>
+                        </div>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

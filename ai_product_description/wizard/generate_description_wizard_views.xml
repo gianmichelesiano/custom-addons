@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_generate_description_wizard_form" model="ir.ui.view">
+        <field name="name">generate.description.wizard.form</field>
+        <field name="model">generate.description.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Generate Product Description with AI" class="ai_description_wizard">
+                <header>
+                    <button name="action_generate"
+                            string="Generate"
+                            type="object"
+                            class="btn-primary"
+                            invisible="state != 'draft'"/>
+
+                    <button name="action_regenerate"
+                            string="Regenerate"
+                            type="object"
+                            class="btn-secondary"
+                            invisible="state not in ['generated', 'error']"/>
+
+                    <button name="action_use_description"
+                            string="Use This Description"
+                            type="object"
+                            class="btn-success"
+                            invisible="state != 'generated'"/>
+
+                    <button name="action_cancel"
+                            string="Cancel"
+                            type="object"
+                            class="btn-secondary"/>
+
+                    <field name="state" widget="statusbar"/>
+                </header>
+
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="product_id" readonly="1" options="{'no_open': True}"/>
+                        </h1>
+                    </div>
+
+                    <group>
+                        <group name="template_selection" class="ai_template_selection">
+                            <field name="template_type" widget="radio" options="{'horizontal': true}"/>
+                            <div class="text-muted">
+                                <strong>Brief:</strong> Short and punchy, perfect for listings<br/>
+                                <strong>Standard:</strong> Balanced with key features (recommended)<br/>
+                                <strong>Detailed:</strong> Comprehensive with full storytelling
+                            </div>
+                        </group>
+                    </group>
+
+                    <!-- Generated Description Preview -->
+                    <group string="Generated Description" name="preview" class="ai_preview_container">
+                        <!-- Loading State -->
+                        <div invisible="state != 'generating'" class="ai_loading_spinner">
+                            <i class="fa fa-spinner fa-spin fa-3x fa-fw text-primary"/>
+                            <p class="mt-3"><strong>Generating your description...</strong></p>
+                            <p class="text-muted">This usually takes 3-5 seconds</p>
+                        </div>
+
+                        <!-- Error State -->
+                        <div invisible="state != 'error'">
+                            <div class="alert alert-danger" role="alert">
+                                <h4 class="alert-heading"><i class="fa fa-exclamation-triangle"/> Error</h4>
+                                <field name="error_message" readonly="1"/>
+                                <hr/>
+                                <p class="mb-0">
+                                    <strong>Troubleshooting:</strong><br/>
+                                    • Check your API key in Settings → General Settings → AI Product Description<br/>
+                                    • Verify your OpenAI account has available credits<br/>
+                                    • Check your internet connection<br/>
+                                    • Try again with the "Regenerate" button above
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Generated State -->
+                        <div invisible="state != 'generated'">
+                            <field name="generated_description" widget="html"/>
+                            <div class="mt-3">
+                                <field name="token_usage" readonly="1" class="text-muted"/>
+                                <p class="text-muted small">
+                                    <i class="fa fa-info-circle"/> You can edit the text above before saving.
+                                    Click "Use This Description" to save it to the product, or "Regenerate" to create a new version.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Draft State - Instructions -->
+                        <div invisible="state != 'draft'">
+                            <div class="alert alert-info" role="alert">
+                                <h4 class="alert-heading"><i class="fa fa-magic"/> Ready to Generate!</h4>
+                                <p>
+                                    Select a template above and click <strong>"Generate"</strong> to create
+                                    an AI-powered product description.
+                                </p>
+                                <hr/>
+                                <p class="mb-0">
+                                    <strong>Current Product Info:</strong><br/>
+                                    <field name="product_id" invisible="1"/>
+                                    This will use your product's name, category, price, and attributes
+                                    to generate a professional description.
+                                </p>
+                            </div>
+                        </div>
+                    </group>
+
+                    <!-- Footer Info -->
+                    <group>
+                        <div class="text-muted small">
+                            <i class="fa fa-info-circle"/>
+                            Cost: ~€0.02 per generation | Powered by OpenAI GPT
+                        </div>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action to open wizard -->
+    <record id="action_generate_description_wizard" model="ir.actions.act_window">
+        <field name="name">Generate Description with AI</field>
+        <field name="res_model">generate.description.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="product.model_product_template"/>
+    </record>
+
+</odoo>

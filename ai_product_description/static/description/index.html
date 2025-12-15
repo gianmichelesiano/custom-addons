@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Product Description Generator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .feature-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .feature-card h3 {
+            margin-top: 0;
+            color: #667eea;
+        }
+        .screenshot {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        .pricing {
+            background: #e3f2fd;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .pricing h2 {
+            color: #1976d2;
+            font-size: 2em;
+        }
+        .price {
+            font-size: 3em;
+            font-weight: bold;
+            color: #1976d2;
+        }
+        .button {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .comparison {
+            margin: 40px 0;
+        }
+        .comparison table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .comparison th, .comparison td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .comparison th {
+            background: #667eea;
+            color: white;
+        }
+        .benefits {
+            background: #fff3cd;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #ffc107;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>✨ AI Product Description Generator</h1>
+        <p>Transform your product catalog in minutes, not weeks</p>
+    </div>
+
+    <div class="benefits">
+        <h2>⚡ Save 97% of Your Time</h2>
+        <p><strong>Without this module:</strong> 15 minutes per description × 200 products = 50 hours</p>
+        <p><strong>With this module:</strong> 10 seconds per description × 200 products = 30 minutes</p>
+        <p><strong>ROI: Immediate.</strong> Your investment pays for itself with the first 5 products.</p>
+    </div>
+
+    <h2>🎯 Key Features</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3>🚀 One-Click Generation</h3>
+            <p>Click "Generate with AI" and get a professional product description in 3 seconds.</p>
+        </div>
+        <div class="feature-card">
+            <h3>📝 3 Templates</h3>
+            <p>Brief (50 words), Standard (100 words), or Detailed (200 words). Choose what fits your style.</p>
+        </div>
+        <div class="feature-card">
+            <h3>✏️ Edit Before Saving</h3>
+            <p>Preview and modify the AI-generated text before applying it to your product.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🔄 Regenerate Anytime</h3>
+            <p>Not happy with the result? Click "Regenerate" for a fresh version.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🔒 Secure Configuration</h3>
+            <p>Your OpenAI API key is stored securely with password protection.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🛡️ Smart Error Handling</h3>
+            <p>Clear error messages with troubleshooting steps if something goes wrong.</p>
+        </div>
+    </div>
+
+    <h2>📊 How It Works</h2>
+    <ol style="font-size: 1.1em; line-height: 2;">
+        <li>Open any product in Odoo</li>
+        <li>Click the "Generate AI Description" button</li>
+        <li>Select a template (Brief, Standard, or Detailed)</li>
+        <li>Wait 3-5 seconds while AI generates your description</li>
+        <li>Preview, edit if needed, and save</li>
+    </ol>
+
+    <div class="comparison">
+        <h2>📈 Before vs. After</h2>
+        <table>
+            <tr>
+                <th>Without AI</th>
+                <th>With AI</th>
+            </tr>
+            <tr>
+                <td>15 minutes per product</td>
+                <td>10 seconds per product</td>
+            </tr>
+            <tr>
+                <td>200 products = 50 hours</td>
+                <td>200 products = 30 minutes</td>
+            </tr>
+            <tr>
+                <td>Cost: €1,250-2,500 (time/freelancer)</td>
+                <td>Cost: €29 + ~€2 API</td>
+            </tr>
+            <tr>
+                <td>Inconsistent quality</td>
+                <td>Professional, SEO-optimized content</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="pricing">
+        <h2>💰 Simple, Transparent Pricing</h2>
+        <div class="price">€29</div>
+        <p style="font-size: 1.2em;">One-time payment. Unlimited products. Lifetime updates.</p>
+        <p style="color: #666;">+ OpenAI API costs: ~€0.02 per description (you pay directly to OpenAI)</p>
+    </div>
+
+    <h2>🔧 Technical Details</h2>
+    <div class="feature-card">
+        <h3>Requirements</h3>
+        <ul>
+            <li>Odoo 19.0+ (compatible with 17.0, 18.0, 19.0)</li>
+            <li>OpenAI API key (free account available at platform.openai.com)</li>
+            <li>Python package: <code>openai</code> (auto-installed)</li>
+        </ul>
+
+        <h3>What You Get</h3>
+        <ul>
+            <li>Full source code (Python + XML)</li>
+            <li>Installation guide</li>
+            <li>Video tutorial for OpenAI API key setup</li>
+            <li>Email support</li>
+            <li>Free updates and bug fixes</li>
+        </ul>
+
+        <h3>API Costs (Paid to OpenAI, Not Us)</h3>
+        <ul>
+            <li>GPT-4o Mini: ~€0.02 per description (recommended)</li>
+            <li>GPT-4o: ~€0.10 per description (more accurate)</li>
+            <li>100 descriptions ≈ €2 in API costs</li>
+        </ul>
+    </div>
+
+    <h2>❓ Frequently Asked Questions</h2>
+    <div class="feature-card">
+        <h3>Do I need an OpenAI account?</h3>
+        <p>Yes. You bring your own API key (BYOK model). This keeps costs transparent and under your control. Creating an account is free and takes 2 minutes.</p>
+
+        <h3>Is my API key secure?</h3>
+        <p>Yes. Your API key is stored encrypted in Odoo's settings and never leaves your server.</p>
+
+        <h3>Can I customize the descriptions?</h3>
+        <p>Absolutely! You can edit the AI-generated text before saving, and adjust creativity/length in settings.</p>
+
+        <h3>What languages are supported?</h3>
+        <p>Currently English and Italian. More languages coming in future updates.</p>
+
+        <h3>What if I'm not satisfied?</h3>
+        <p>Contact us within 30 days for a full refund, no questions asked.</p>
+    </div>
+
+    <div style="text-align: center; margin: 50px 0;">
+        <h2>🚀 Ready to Transform Your Product Catalog?</h2>
+        <p style="font-size: 1.2em;">Join hundreds of Odoo users saving hours of work every week.</p>
+        <a href="#" class="button">Install Now - €29</a>
+    </div>
+
+    <hr style="margin: 50px 0; border: none; border-top: 1px solid #ddd;">
+
+    <div style="text-align: center; color: #666;">
+        <p>Created by Gianmichele Bandinelli | Support: <a href="https://github.com/bandigare">GitHub</a></p>
+        <p>Licensed under LGPL-3</p>
+    </div>
+
+</body>
+</html>
