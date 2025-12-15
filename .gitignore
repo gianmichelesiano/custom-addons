@@ -1,0 +1,10 @@
+# Python
+*.pyc
+*.pyo
+__pycache__/
+
+# OS
+.DS_Store
+
+# Examples
+*/static/description/examples/
