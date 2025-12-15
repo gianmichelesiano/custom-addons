@@ -41,7 +41,7 @@ Automatically generate professional product descriptions using OpenAI's GPT mode
 ## Support
 
 For issues, questions, or feature requests:
-- GitHub: https://github.com/bandigare/odoo-ai-product-description
+- GitHub: https://speats.ch//odoo-ai-product-description
 - Email: support@yourdomain.com
 
 ## License
